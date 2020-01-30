@@ -1,0 +1,205 @@
+
+/* s
+input{
+  padding:0;margin:0;
+}*/
+body{
+  font-family:'Roboto', sans-serif;
+}
+*{
+  font-family: 'Roboto', sans-serif;
+}
+.row{
+  padding:0;
+  margin:0;
+}
+/*   border:1px solid red; */
+.header-space{
+  height:50px;
+}
+.logo-resize{
+  width:420px;
+  height:auto;
+}
+.margin-bar{
+  margin-left:180px;
+}
+.color{
+  background-color:#000;
+}
+/* intentionally named wrong to override default class */
+.search-ber{
+  margin:auto;
+  width:560px;
+  height:44px;
+  border-radius: 44px;
+  background-color:rgb(241, 243, 244);
+}
+.input-setting{
+  width:516px;
+  height:44px;
+  border:1px solid pink;
+}
+.container .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.mic-wrapper{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  float:right;
+    transition:.2s all ease-out;
+}
+
+.mic-wrapper:hover{
+  transition:.2s all ease-in;
+      background-color:rgba(128,134,139,.1);
+
+}
+
+.mic-resize{
+  cursor:pointer;
+  margin-top:10px;
+  width:24px;
+  height:24px;
+}
+
+#reset-this-parent {
+  all: initial;
+  width:494px;
+  height:44px;
+  float:left;
+  margin-left:22px;
+  bacground-color:transparent;
+  font-family:'Roboto', sans-serif;
+/*   border:1px solid red; */
+}
+input::placeholder{
+    font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  color:rgb(128,134,139);
+}
+.tab-spacing{
+  padding-top:20px;
+  padding-bottom:20px;
+}
+i{
+  transition: 0.2s all ease;
+  color:rgba(128, 128, 128, 0.69);
+}
+i:hover{
+  transition: 0.2s all ease;
+  color:#0089ec;
+}
+.tab-height{
+  padding:0;
+  margin:0;
+  height:200px;
+  width:450px;
+/*   background-color:#666; */
+}
+.active i{
+  color:#0089ec;
+}
+.tabs-wrapper{
+  margin:auto;
+  height:300px;
+  width:600px;
+/*   border:1px solid #000; */
+}
+.tabs{
+  height:36px;
+}
+.tabs .indicator {
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background-color: #0089ec;
+    max-width: 50px;
+    will-change: left, right;
+    border-radius: 15px 15px 0 0;
+}
+#test-swipe-1{
+/*   border:1px solid green; */
+  padding-top:15px;
+  padding-left:25px;
+  padding-right:25px;
+  margin:0;
+}
+#test-swipe-2{
+/*   border:1px solid green; */
+  padding-top:15px;
+  padding-left:25px;
+  padding-right:25px;
+  margin:0;
+}#test-swipe-3{
+/*   border:1px solid green; */
+  padding-top:15px;
+  padding-left:25px;
+  padding-right:25px;
+  margin:0;
+}#test-swipe-4{
+/*   border:1px solid green; */
+  padding-top:15px;
+  padding-left:25px;
+  padding-right:25px;
+  margin:0;
+}
+.flat-card{
+  padding:30px;
+  width:110px;
+  height:110px;
+/*   border:1px solid pink; */
+  float:left;
+/*   display:block; */
+  position:relative;
+}
+.notif{
+  width:12px;
+  height:12px;
+  padding:0;
+  margin:0;
+  border-radius:50%;
+  position:absolute;
+  right:0;
+  border:2px solid rgb(241, 243, 244);
+  margin-right:10px;
+}
+.icon-resize{
+  width:30px;
+  height:30px;
+}
+.icon-wrapper{
+  width:550px;
+  height:100%;
+/*   border:1px solid blue; */
+}
+.circle-rep{
+  width:50px;
+  height:50px;
+  background-color:rgb(241, 243, 244);
+/*    border:1px solid green; */
+  padding:10px;
+  border-radius:50%;
+}
+
+.foot{
+  position:absolute;
+  bottom:0;
+  float:right;
+}
+#stripe{
+  float:right;
+}
+/* *{
+  outline: 1px solid red;
+} */
+.detail{
+ font-size:12px; 
+}
+.chip{
+    background-color:rgba(241, 243, 244,.5);
+  font-weight:400;
+}
