@@ -15,12 +15,18 @@
   <h3>It's <span style="color:purple">404</span> error. The Night Watch has begun.</h3>
   <br>
 </div>
-<p style="position: absolute;bottom: 0; left:0; right:0;text-align: center;margin: 0 auto;margin-bottom:40px;">Meanwhile, watch <a target="_blank" style="color:red"href="https://netflix.com/">Netflix<a></a></p>
+<p style="position: absolute;bottom: 0; left:0; right:0;text-align: center;margin: 0 auto;margin-bottom:40px;">
+  Meanwhile, Click anywhere to be surprised :P OR Just watch <a target="_blank" style="color:red"href="https://netflix.com/">Netflix<a></a>
+ 
+</p>
 <!-- partial -->
 <audio src="got.mp3" id="my_audio" loop="loop" autoplay="autoplay"></audio>
 <script type="text/javascript">
   window.onmousemove=function(){
       document.getElementById("my_audio").play();
+    }
+    window.onmousedown = function(){
+      document.getElementById("my_audio").pause();
     }
   </script>
 </body>
