@@ -242,7 +242,8 @@ section {
   grid-column: span 2;
 }
 #one-display .full {
-  grid-column: span 5;
+  grid-column: span 7;
+  grid-row: span 4;
 }
 #one-display .black {
   background-color: #000000;
@@ -253,6 +254,10 @@ section {
 #one-display .left-top {
   justify-content: start;
   align-items: start;
+}
+#one-display .small {
+  grid-column: span .5;
+  grid-row: span .5;
 }
 
 .card + .none {
