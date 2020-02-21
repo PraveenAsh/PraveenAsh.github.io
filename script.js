@@ -5,9 +5,9 @@
 */
 window.chromeBlack = '#35363a';
 window.colorSchemes = [
-{ name: 'purple', hex: '#66459b', accentColor: 'none', darkSupport: false },
-{ name: 'basic', hex: window.chromeBlack, accentColor: '#00c9db', darkSupport: true }];
-
+{ name: 'purple', hex: '#66459b', accentColor: 'accent-color-cyan', darkSupport: false, accentHex : '#00c9dbcc' },
+{ name: 'basic', hex: window.chromeBlack, accentColor: 'accent-color-cyan', darkSupport: true , accentHex : '#00c9dbcc'}];
+window.activeColorScheme = -1;
 x = ['#66459b', '#FFD700', '#e91e63', '#4caf50', '#ff5722', '#424242'];
 window.nameInMillionLanguages = ['praveen naik.', 'ಪ್ರವೀಣ್ ನಾಯಕ್.', 'प्रवीण नायक ।', 'பிரவீன் நாய்க்.'];
 window.activeNameIndicator = 0;
@@ -16,40 +16,54 @@ window.darkKnight = window.matchMedia('(prefers-color-scheme: dark)').matches;
 if (window.darkKnight) document.body.style.backgroundColor = window.chromeBlack;
 changeColor(undefined, true);
 
+var indicator = document.getElementById('indicator_wrapper');
 init();
 
 function init(){
   // Indicator
-  const indicator = document.getElementById('indicator_wrapper');
   window.nameInMillionLanguages.map((each, index) => {
     const eachIndicator = document.createElement('span');
-    const className = window.activeNameIndicator == index ? 'indicator active' : 'indicator'; 
+    const className = window.activeNameIndicator == index ? `indicator ${window.colorSchemes[window.activeColorScheme].accentColor}` : 'indicator'; 
     eachIndicator.className = className;
     indicator.appendChild(eachIndicator);
   });
 }
 
 function iJustGiveRandomShit(list) {
-  return list[Math.floor(Math.random() * list.length)];
+  const index = Math.floor(Math.random() * list.length);
+  const item = list[index];
+  return {item, index};
 }
 
 function changeColor(e, isFisrtLoad) {
-  const randomColor = isFisrtLoad ? window.colorSchemes[0] : iJustGiveRandomShit(window.colorSchemes);
+  const {item, index} = isFisrtLoad ? {item: window.colorSchemes[0], index : 0} : iJustGiveRandomShit(window.colorSchemes);
+  const randomColor = item;
+  window.activeColorScheme = index;
   const cards = document.getElementsByClassName('card');
   // Note: These stunts are 'perform'ed by highly trained professionals.
   // Please do not try this at work or any openSource.
   for (var i = 0; i < cards.length; i++) {
     if (e) e.querySelector('h1 span').innerHTML = ['Not a', randomColor.name, 'person?'].join(' ');
     cards[i].style.backgroundColor = randomColor.hex;
-    cards[i].style.border = window.darkKnight && randomColor.darkSupport ? '2px solid ' + randomColor.accentColor : 'unset';
+    cards[i].style.border = window.darkKnight && randomColor.darkSupport ? '2px solid ' + randomColor.accentHex : 'unset';
     cards[i].style.borderRadius = window.darkKnight && randomColor.darkSupport ? '10px' : 'unset';
   }
 }
 
 var offCourseItsMyName = document.getElementById('not-my-name');
 
+function handleIndicatorChange(currActive){
+  window.activeNameIndicator ++;
+  const nextActive = window.activeNameIndicator % window.nameInMillionLanguages.length;
+  indicator.querySelectorAll('span')[currActive].classList.remove(window.colorSchemes[window.activeColorScheme].accentColor);
+  indicator.querySelectorAll('span')[nextActive].classList.add(window.colorSchemes[window.activeColorScheme].accentColor);
+  window.activeNameIndicator = nextActive;
+  return nextActive;
+}
+
 window.setInterval(function () {
-  offCourseItsMyName.innerHTML = iJustGiveRandomShit(window.nameInMillionLanguages);
+  const nextActive = handleIndicatorChange(window.activeNameIndicator);
+  offCourseItsMyName.innerHTML = window.nameInMillionLanguages[nextActive];
 }, 2 * 1000);
 
 var hireMeAlert = window.setInterval(function () {
