@@ -9,12 +9,25 @@ window.colorSchemes = [
 { name: 'basic', hex: window.chromeBlack, accentColor: '#00c9db', darkSupport: true }];
 
 x = ['#66459b', '#FFD700', '#e91e63', '#4caf50', '#ff5722', '#424242'];
-window.nameInMillionLanguages = ['ಪ್ರವೀಣ್ ನಾಯಕ್.', 'प्रवीण नायक ।', 'praveen naik.', 'பிரவீன் நாய்க்.'];
+window.nameInMillionLanguages = ['praveen naik.', 'ಪ್ರವೀಣ್ ನಾಯಕ್.', 'प्रवीण नायक ।', 'பிரவீன் நாய்க்.'];
+window.activeNameIndicator = 0;
 
 window.darkKnight = window.matchMedia('(prefers-color-scheme: dark)').matches;
 if (window.darkKnight) document.body.style.backgroundColor = window.chromeBlack;
 changeColor(undefined, true);
 
+init();
+
+function init(){
+  // Indicator
+  const indicator = document.getElementById('indicator_wrapper');
+  window.nameInMillionLanguages.map((each, index) => {
+    const eachIndicator = document.createElement('span');
+    const className = window.activeNameIndicator == index ? 'indicator active' : 'indicator'; 
+    eachIndicator.className = className;
+    indicator.appendChild(eachIndicator);
+  });
+}
 
 function iJustGiveRandomShit(list) {
   return list[Math.floor(Math.random() * list.length)];

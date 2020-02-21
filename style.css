@@ -258,3 +258,26 @@ section {
 .card + .none {
   display: none;
 }
+
+#indicator_wrapper{
+  z-index:200;
+  width: 100%;
+  position:absolute;
+  bottom: 20px;
+  height: 5px;
+  text-align: center;
+}
+span{
+  transition: none;
+}
+.indicator{
+  display: inline-block;
+  height: 4px;
+  padding: 0 25px;
+  background-color: rgba(255, 255, 255, 0.48);
+  margin: 0 5px;
+  border-radius: 50px;
+}
+.active{
+  background-color: rgba(255, 255, 255, 1) !important;
+}
