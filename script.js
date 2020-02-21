@@ -45,6 +45,7 @@ var hireMeAlert = window.setInterval(function () {
 }, 60 * 3 * 1000);
 
 console.log('If you\'re a developer and you\'ve come here, Viola!');
-console.log('The is written with a bug, find it!');
-console.log('Do you binge watch shows? Hit me up with your favs. There is a good chance I have seen it');
-console.log('If your wondering what font i have used, its Product G̶o̶o̶g̶l̶e̶ Sans. Yeah, they were dumb to make it available to public');
+console.log('Annexure 0 : Hey! This is Internet. I made it myself :p');
+console.log('Annexure 1 : The is written with a bug, find it!');
+console.log('Annexure 2 : Do you binge watch shows? Hit me up with your favs. There is a good chance I have seen it');
+console.log('Annexure 3 : If your wondering what font i have used, its Product G̶o̶o̶g̶l̶e̶ Sans. Yeah, they were dumb to make it available to public');
