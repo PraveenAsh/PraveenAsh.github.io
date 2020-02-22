@@ -40,6 +40,8 @@ function changeColor(e, isFisrtLoad) {
   const randomColor = item;
   window.activeColorScheme = index;
   const cards = document.getElementsByClassName('card');
+  if(!window.darkKnight)
+    document.querySelector('meta[name="theme-color"]').setAttribute('content',  randomColor.hex);
   // Note: These stunts are 'perform'ed by highly trained professionals.
   // Please do not try this at work or any openSource.
   for (var i = 0; i < cards.length; i++) {
