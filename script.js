@@ -5,8 +5,8 @@
 */
 window.chromeBlack = '#35363a';
 window.colorSchemes = [
-{ name: 'purple', hex: '#66459b', accentColor: 'accent-color-cyan', darkSupport: false, accentHex : '#00c9dbcc' },
-{ name: 'basic', hex: window.chromeBlack, accentColor: 'accent-color-cyan', darkSupport: true , accentHex : '#00c9dbcc'}];
+  { name: 'purple', hex: '#66459b', accentColor: 'accent-color-cyan', darkSupport: false, accentHex: '#00c9dbcc' },
+  { name: 'basic', hex: window.chromeBlack, accentColor: 'accent-color-cyan', darkSupport: true, accentHex: '#00c9dbcc' }];
 window.activeColorScheme = -1;
 x = ['#66459b', '#FFD700', '#e91e63', '#4caf50', '#ff5722', '#424242'];
 window.nameInMillionLanguages = ['praveen naik.', 'ಪ್ರವೀಣ್ ನಾಯಕ್.', 'प्रवीण नायक ।', 'பிரவீன் நாய்க்.'];
@@ -19,11 +19,11 @@ changeColor(undefined, true);
 var indicator = document.getElementById('indicator_wrapper');
 init();
 
-function init(){
+function init() {
   // Indicator
   window.nameInMillionLanguages.map((each, index) => {
     const eachIndicator = document.createElement('span');
-    const className = window.activeNameIndicator == index ? `indicator ${window.colorSchemes[window.activeColorScheme].accentColor}` : 'indicator'; 
+    const className = window.activeNameIndicator == index ? `indicator ${window.colorSchemes[window.activeColorScheme].accentColor}` : 'indicator';
     eachIndicator.className = className;
     indicator.appendChild(eachIndicator);
   });
@@ -32,16 +32,16 @@ function init(){
 function iJustGiveRandomShit(list) {
   const index = Math.floor(Math.random() * list.length);
   const item = list[index];
-  return {item, index};
+  return { item, index };
 }
 
 function changeColor(e, isFisrtLoad) {
-  const {item, index} = isFisrtLoad ? {item: window.colorSchemes[0], index : 0} : iJustGiveRandomShit(window.colorSchemes);
+  const { item, index } = isFisrtLoad ? { item: window.colorSchemes[0], index: 0 } : iJustGiveRandomShit(window.colorSchemes);
   const randomColor = item;
   window.activeColorScheme = index;
   const cards = document.getElementsByClassName('card');
-  if(!window.darkKnight)
-    document.querySelector('meta[name="theme-color"]').setAttribute('content',  randomColor.hex);
+  if (!window.darkKnight)
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', randomColor.hex);
   // Note: These stunts are 'perform'ed by highly trained professionals.
   // Please do not try this at work or any openSource.
   for (var i = 0; i < cards.length; i++) {
@@ -54,8 +54,8 @@ function changeColor(e, isFisrtLoad) {
 
 var offCourseItsMyName = document.getElementById('not-my-name');
 
-function handleIndicatorChange(currActive){
-  window.activeNameIndicator ++;
+function handleIndicatorChange(currActive) {
+  window.activeNameIndicator++;
   const nextActive = window.activeNameIndicator % window.nameInMillionLanguages.length;
   indicator.querySelectorAll('span')[currActive].classList.remove(window.colorSchemes[window.activeColorScheme].accentColor);
   indicator.querySelectorAll('span')[nextActive].classList.add(window.colorSchemes[window.activeColorScheme].accentColor);
