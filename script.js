@@ -9,7 +9,8 @@ window.colorSchemes = [
   { name: 'basic', hex: window.chromeBlack, accentColor: 'accent-color-cyan', darkSupport: true, accentHex: '#00c9dbcc' }];
 window.activeColorScheme = -1;
 x = ['#66459b', '#FFD700', '#e91e63', '#4caf50', '#ff5722', '#424242'];
-window.nameInMillionLanguages = ['praveen naik.', 'ಪ್ರವೀಣ್ ನಾಯಕ್.', 'प्रवीण नायक ।', 'பிரவீன் நாய்க்.'];
+window.nameInMillionLanguages = ['praveen naik.'];
+// window.nameInMillionLanguages = ['praveen naik.', 'ಪ್ರವೀಣ್ ನಾಯಕ್.', 'प्रवीण नायक ।', 'பிரவீன் நாய்க்.'];
 window.activeNameIndicator = 0;
 
 window.darkKnight = window.matchMedia('(prefers-color-scheme: dark)').matches;
